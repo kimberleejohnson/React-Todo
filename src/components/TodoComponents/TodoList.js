@@ -12,16 +12,11 @@ import TodoForm from "./TodoForm"
 const TodoList = props => {
     return (
         <div>
-            <div>
-                {props.toDos.map(toDo => (
+            {props.toDos.map(toDo => (
                 <Todo toDo={toDo}/> 
-                ))}
-            </div>
-    
-            <div>
-                <TodoForm /> 
-            </div>
+            ))}
         </div>
+
     );
 };
 

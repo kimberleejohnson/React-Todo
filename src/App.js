@@ -4,7 +4,7 @@
 
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
-// import TodoForm from "./TodoForm"; 
+import TodoForm from "./components/TodoComponents/TodoForm"; 
 
 // Step 1: declaring my Class
 class App extends React.Component {
@@ -63,7 +63,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>Kimberlee's to-do list</h1>
+        
         <TodoList toDos={this.state.toDos}/>
+
+        <TodoForm value={this.state.toDo}/> 
+
       </div>
     );
   }
