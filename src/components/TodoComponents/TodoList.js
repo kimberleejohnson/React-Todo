@@ -1,6 +1,7 @@
 // Establishing my imports 
 import React from "react";
 import Todo from "./Todo"; 
+import TodoForm from "./TodoForm"; 
 
 // Building my array of to-do's 
 const todos = [
@@ -58,14 +59,9 @@ render() {
                 )}
             </div>
 
-            <form>
-                <input 
-                placeholder="New to-do"
-                value={this.state.todo.task}
-                />
-
-                <button>Add to-do</button>
-            </form>
+            <div>
+                <TodoForm value={this.state.todo.task}/> 
+            </div>
         </div>
     );
 }
