@@ -1,6 +1,7 @@
 // Establishing my imports 
 import React from "react";
 import Todo from "./Todo"; 
+import TodoForm from "./TodoForm"
 
 
 // TodoList will be a functional component that takes in props so that the state data can change 
@@ -11,9 +12,15 @@ import Todo from "./Todo";
 const TodoList = props => {
     return (
         <div>
-            {props.toDos.map(toDo => (
-            <Todo toDo={toDo}/> 
-            ))}
+            <div>
+                {props.toDos.map(toDo => (
+                <Todo toDo={toDo}/> 
+                ))}
+            </div>
+    
+            <div>
+                <TodoForm /> 
+            </div>
         </div>
     );
 };

@@ -6,10 +6,10 @@ const TodoForm = props => {
     return (
     <form>
       <input 
-      onChange={props.TodoChange}
-      placeholder="New to-do" 
-      value={props.task} 
-      onSubmit={props.onSubmit}
+        placeholder="Add a new to-do" 
+      // onChange={props.TodoChange}
+      // value={props.task} 
+      // onSubmit={props.onSubmit}
       
       />
 
