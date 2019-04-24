@@ -35,18 +35,19 @@ class App extends React.Component {
   }
 
   // // Function to add an item to the list 
-  // addToDo = event => {
-  //   // Removing my page refresh
-  //   event.preventDefault();
-  //   this.setState({
-  //     todosOnState: [...this.state.todosOnState, this.state.todo],
-  //     todo: {
-  //       task: "",
-  //       id: "",
-  //       completed: false
-  //     }
-  //   });
-  // };
+  addToDo = event => {
+    // Removing my page refresh
+    event.preventDefault();
+
+    // Declaring a new Object to hold the user input 
+    const newToDo = { task: this.state.toDo, completed: false, id: Date.now()}; 
+    
+    // Updating state 
+    this.setState({
+      toDos: [...this.state.toDos, newToDo],
+      toDo: " "
+     });
+   };
 
   // // Function to make sure the new list item displays 
   // handleChanges = event => {
@@ -66,36 +67,14 @@ class App extends React.Component {
         
         <TodoList toDos={this.state.toDos}/>
 
-        <TodoForm value={this.state.toDo}/> 
+        <TodoForm 
+        // value={this.state.toDo}
+        handleAddToDo={this.addToDo}
+        /> 
 
       </div>
     );
   }
 }
-
-// render() {
-//   return (
-//       <div>
-//           <h1>Kimberlee's to-do's</h1>
-
-//           <div>
-//               {this.state.todosOnState.map(todo =>
-//               (
-//                 <Todo todo={todo} />
-//               )  
-//               )}
-//           </div>
-
-//           <div>
-//               <TodoForm 
-//               value={this.state.todo.task} 
-//               onSubmit={this.addToDo}
-//               onChange={this.handleChanges}
-//               /> 
-//           </div>
-//       </div>
-//   );
-// }
-// }
 
 export default App;
