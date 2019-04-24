@@ -57,6 +57,13 @@ render() {
                 )  
                 )}
             </div>
+
+            <form>
+                <input 
+                placeholder="New to-do"
+                value={this.state.todo.task}
+                />
+            </form>
         </div>
     );
 }
