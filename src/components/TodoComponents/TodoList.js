@@ -43,7 +43,32 @@ class TodoList extends React.Component {
     }
 
 
-// Space for additional functions 
+// Additional functions
+
+// Adding an item to the list 
+addToDo = event => {
+    // Removing my page refresh 
+    event.preventDefault();
+    this.setState({
+        todosOnState:
+        [...this.state.todosOnState, this.state.todo],
+        todo: {
+            task: '',
+            id: '',
+            completed: false
+        }
+    });
+};
+
+// Making sure that item shows up on the list 
+handleChanges = event => {
+    this.setState({
+        todo: {
+            ...this.state.todo,
+            [event.target.value]: event.target.task 
+        }
+    })
+}
 
 // 3) Render UI and return some JSX 
 render() {
@@ -60,7 +85,11 @@ render() {
             </div>
 
             <div>
-                <TodoForm value={this.state.todo.task}/> 
+                <TodoForm 
+                value={this.state.todo.task} 
+                onSubmit={this.addToDo}
+                onChange={this.handleChanges}
+                /> 
             </div>
         </div>
     );
