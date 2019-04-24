@@ -1,14 +1,15 @@
-// Child of Parent TodoList
+// Todo will be a functional component that takes in props so that the state data can change 
 
 import React from 'react'; 
 
-function Todo(props) {
+const Todo = props => {
     return (
         <div>
             <ul>
-                <li>{props.todo.task}</li>
+            <li>{props.toDo.task}</li>
             </ul>
         </div>
-    )
-}
+    );
+};
+  
 export default Todo; 
