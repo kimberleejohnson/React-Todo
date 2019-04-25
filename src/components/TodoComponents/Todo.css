@@ -1,0 +1,18 @@
+.app {
+    box-sizing: border-box; 
+    width: 800px; 
+    background-color: #7B0C39; 
+    color: white; 
+    padding: 2%; 
+    font-family: 'Pacifico', cursive;
+    display: flex; 
+}
+
+.full-list {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.gif {
+    padding-left: 40px; 
+}

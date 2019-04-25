@@ -6,6 +6,9 @@ import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm"; 
 
+// Adding in my styling 
+import './components/TodoComponents/Todo.css'; 
+
 // Step 1: declaring my Class
 class App extends React.Component {
   // Step 2: Adding my Constructor
@@ -87,20 +90,32 @@ class App extends React.Component {
   // Step 3: Rendering some UI and returning JSX
   render() {
     return (
-      <div>
-        <h1>What would Dolly do?</h1>
-        <h3>A to-do list for the dreamer in you!</h3>
-        
-        <TodoList 
-        handleToggleStyle={this.toggleToDoStyle}
-        toDos={this.state.toDos}/>
+      <div className="app">
+        <div className="text">
+          <div className="headline">
+            <h1>What would Dolly do?</h1>
+            <h3>A to-do list for the dreamer in you!</h3>
+          </div>
+          
+          <div className="full-list">
+            <div className="list">
+              <TodoList 
+              handleToggleStyle={this.toggleToDoStyle}
+              toDos={this.state.toDos}/>
+            </div>
+    
+            <div className="form">
+              <TodoForm 
+              value={this.state.toDo}
+              handleChanges={this.handleChanges}
+              handleAddToDo={this.addToDo}
+              handleClearComplete={this.clearComplete}
+              /> 
+            </div>
+          </div>
+        </div>
 
-        <TodoForm 
-        value={this.state.toDo}
-        handleChanges={this.handleChanges}
-        handleAddToDo={this.addToDo}
-        handleClearComplete={this.clearComplete}
-        /> 
+<div className="gif"><iframe  src="https://giphy.com/embed/MoxuIDaHkg9XQBnjhg" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
       </div>
     );
