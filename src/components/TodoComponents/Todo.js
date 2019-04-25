@@ -4,7 +4,7 @@ import React from 'react';
 
 const Todo = props => {
     return (        
-        <ul style={props.toDo.complete ? { textDecoration: 'line-through'} : null}
+        <ul style={props.toDo.completed ? { textDecoration: 'line-through'} : null}
         onClick={() => props.handleToggleStyle(props.toDo.id)} >   
             <li>{props.toDo.task}</li>
         </ul>

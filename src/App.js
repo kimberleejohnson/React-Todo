@@ -56,25 +56,42 @@ class App extends React.Component {
 
 
  // Function that will toggle a strikethrough style on completed items 
+ // It sets the state at the bottom because we need the change to affect the state. 
+ 
+ // Passing in the id so the function knows which toDo it clicks on 
  toggleToDoStyle = id => {
-   let toDos = this.state.toDos.slice(); 
-   toDos = toDos.map(toDo => {
-     if (toDo.id === id) {
-       toDo.complete = !toDo.complete; 
+   this.setState({
+     toDos: this.state.toDos.map(toDo => {
+       if (id === toDo.id) {
+         return {...toDo, completed: !toDo.completed}
+       }else{
+      // If it's not the toDo we're looking at, return the toDo untouched. 
        return toDo; 
-     } else {
-       return toDo; 
-     }
-    }); 
-    this.setState({toDos}); 
- }; 
+      }
+     })
+
+   })
+ }
+
+//  toggleToDoStyle = id => {
+//   let toDos = this.state.toDos.slice(); 
+//    toDos = toDos.map(toDo => {
+//      if (toDo.id === id) {
+//        toDo.completed = !toDo.completed; 
+//        return toDo; 
+//      } else {
+//        return toDo; 
+//      }
+//     }); 
+//     this.setState({toDos}); 
+//  }; 
 
  // Function that will clear all the completed items 
  clearComplete = event => {
    // Removing page refresh
    event.preventDefault(); 
 
-   let toDos = this.state.toDos.filter(toDo => !toDo.complete);
+   let toDos = this.state.toDos.filter(toDo => !toDo.completed);
    this.setState({ toDos });
  };
 
