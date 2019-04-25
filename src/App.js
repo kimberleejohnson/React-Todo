@@ -68,6 +68,16 @@ class App extends React.Component {
     }); 
     this.setState({toDos}); 
  }; 
+
+ // Function that will clear all the completed items 
+ clearComplete = event => {
+   // Removing page refresh
+   event.preventDefault(); 
+
+   let toDos = this.state.toDos.filter(toDo => !toDo.complete);
+   this.setState({ toDos });
+ };
+
  
   // Step 3: Rendering some UI and returning JSX
   render() {
@@ -83,6 +93,7 @@ class App extends React.Component {
         value={this.state.toDo}
         handleChanges={this.handleChanges}
         handleAddToDo={this.addToDo}
+        handleClearComplete={this.clearComplete}
         /> 
 
       </div>
