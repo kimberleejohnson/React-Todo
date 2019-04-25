@@ -1,2 +1,24 @@
-// your components will all go in this `component` directory.
-// feel free to change this component.js into TodoList.js
+// Establishing my imports 
+import React from "react";
+import Todo from "./Todo"; 
+
+
+// TodoList will be a functional component that takes in props so that the state data can change 
+
+// It does not need to be a Class Component because App is covering that (big boss)
+
+
+const TodoList = props => {
+    return (
+        <div>
+            {props.toDos.map((toDo) => (
+                <Todo 
+                handleToggleStyle={props.handleToggleStyle}
+                toDo={toDo}/> 
+            ))}
+        </div>
+
+    );
+};
+
+export default TodoList; 
