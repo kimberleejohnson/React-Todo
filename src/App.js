@@ -30,34 +30,29 @@ class App extends React.Component {
           completed: false
         }
       ],
-      toDo: ""
+      toDo: " "
     };
   }
 
-  // // Function to add an item to the list 
+  // Function that when called adds an item to the list 
   addToDo = event => {
     // Removing my page refresh
     event.preventDefault();
 
     // Declaring a new Object to hold the user input 
-    const newToDo = { task: this.state.toDo, completed: false, id: Date.now()}; 
+    const newToDo = { task: this.state.toDo, id: Date.now(), completed: false}; 
     
     // Updating state 
     this.setState({
       toDos: [...this.state.toDos, newToDo],
       toDo: " "
-     });
-   };
+      }); 
+    };
 
-  // // Function to make sure the new list item displays 
-  // handleChanges = event => {
-  //   this.setState({
-  //     todo: {
-  //       ...this.state.todo,
-  //       [event.target.value]: event.target.task
-  //     }
-  //   });
-  // };
+ // Handle changes function that pairs with set state to update my state
+ handleChanges = event => 
+ this.setState({
+   [event.target.name]: event.target.value }); 
 
   // Step 3: Rendering some UI and returning JSX
   render() {
@@ -68,7 +63,8 @@ class App extends React.Component {
         <TodoList toDos={this.state.toDos}/>
 
         <TodoForm 
-        // value={this.state.toDo}
+        value={this.state.toDo}
+        handleChanges={this.handleChanges}
         handleAddToDo={this.addToDo}
         /> 
 

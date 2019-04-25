@@ -6,8 +6,8 @@ const Todo = props => {
     return (
         <div>
             <ul>
-            <li>{props.toDo.task}</li>
-            </ul>
+                <li>{props.toDo.task}</li>
+            </ul> 
         </div>
     );
 };
