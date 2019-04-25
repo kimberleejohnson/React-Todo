@@ -3,12 +3,11 @@
 import React from 'react'; 
 
 const Todo = props => {
-    return (
-        <div>
-            <ul>
-                <li>{props.toDo.task}</li>
-            </ul> 
-        </div>
+    return (        
+        <ul style={props.toDo.complete ? { textDecoration: 'line-through'} : null}
+        onClick={() => props.handleToggleStyle(props.toDo.id)} >   
+            <li>{props.toDo.task}</li>
+        </ul>
     );
 };
   

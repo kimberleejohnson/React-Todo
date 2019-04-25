@@ -54,13 +54,30 @@ class App extends React.Component {
  this.setState({
    [event.target.name]: event.target.value }); 
 
+
+ // Function that will toggle a strikethrough style on completed items 
+ toggleToDoStyle = id => {
+   let toDos = this.state.toDos.slice(); 
+   toDos = toDos.map(toDo => {
+     if (toDo.id === id) {
+       toDo.complete = !toDo.complete; 
+       return toDo; 
+     } else {
+       return toDo; 
+     }
+    }); 
+    this.setState({toDos}); 
+ }; 
+ 
   // Step 3: Rendering some UI and returning JSX
   render() {
     return (
       <div>
         <h1>Kimberlee's to-do list</h1>
         
-        <TodoList toDos={this.state.toDos}/>
+        <TodoList 
+        handleToggleStyle={this.toggleToDoStyle}
+        toDos={this.state.toDos}/>
 
         <TodoForm 
         value={this.state.toDo}

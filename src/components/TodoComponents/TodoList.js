@@ -12,7 +12,10 @@ const TodoList = props => {
     return (
         <div>
             {props.toDos.map((toDo, index) => (
-                <Todo key={index} toDo={toDo}/> 
+                <Todo 
+                handleToggleStyle={props.handleToggleStyle}
+                key={index} 
+                toDo={toDo}/> 
             ))}
         </div>
 
