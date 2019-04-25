@@ -11,10 +11,9 @@ import Todo from "./Todo";
 const TodoList = props => {
     return (
         <div>
-            {props.toDos.map((toDo, index) => (
+            {props.toDos.map((toDo) => (
                 <Todo 
                 handleToggleStyle={props.handleToggleStyle}
-                key={index} 
                 toDo={toDo}/> 
             ))}
         </div>
