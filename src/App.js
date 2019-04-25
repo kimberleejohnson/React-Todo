@@ -15,17 +15,17 @@ class App extends React.Component {
       // Storing all of my data within App
       toDos: [
         {
-          task: "Build to-do app",
+          task: "Tumble out of bed",
           id: 0,
           completed: false
         },
         {
-          task: "Review training kit",
+          task: "Stumble to the kitchen",
           id: 1,
           completed: false
         },
         {
-          task: "Make Dolly Parton succulent holders",
+          task: "Pour myself a cup of ambition",
           id: 2,
           completed: false
         }
@@ -88,7 +88,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Kimberlee's to-do list</h1>
+        <h1>What would Dolly do?</h1>
+        <h3>A to-do list for the dreamer in you!</h3>
         
         <TodoList 
         handleToggleStyle={this.toggleToDoStyle}
