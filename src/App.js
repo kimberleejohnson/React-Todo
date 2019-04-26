@@ -115,7 +115,7 @@ class App extends React.Component {
           </div>
         </div>
 
-<div className="gif"><iframe  src="https://giphy.com/embed/MoxuIDaHkg9XQBnjhg" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<div className="gif"><iframe  src="https://giphy.com/embed/9oIP0RAwxXRXMISHVh" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
       </div>
     );
