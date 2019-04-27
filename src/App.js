@@ -28,7 +28,7 @@ class App extends React.Component {
           completed: false
         },
         {
-          task: "Pour myself a cup of ambition",
+          task: "Pour yourself a cup of ambition",
           id: 2,
           completed: false
         }
@@ -94,13 +94,17 @@ class App extends React.Component {
          <div className="headline">
             <h1>What would Dolly do?</h1>
             <h3>If she's written 3,000 songs in her lifetime, you can get your work done.</h3>
-            <h2>To-do:</h2>
           </div>
           
-          <div className="list">
-            <TodoList 
-            handleToggleStyle={this.toggleToDoStyle}
-            toDos={this.state.toDos}/>
+          <div className="listImgContainer">
+            <div className="list">
+              <h2>To-do's:</h2>
+              <TodoList 
+              handleToggleStyle={this.toggleToDoStyle}
+              toDos={this.state.toDos}/>
+            </div>
+  
+            <div className="gif"><iframe  src="https://giphy.com/embed/9oIP0RAwxXRXMISHVh" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
           </div>
     
           <div className="form">
@@ -111,8 +115,6 @@ class App extends React.Component {
               handleClearComplete={this.clearComplete}
               /> 
           </div>
-
-          <div className="gif"><iframe  src="https://giphy.com/embed/9oIP0RAwxXRXMISHVh" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
   
       </div>
 
