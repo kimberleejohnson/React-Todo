@@ -28,7 +28,7 @@ class App extends React.Component {
           completed: false
         },
         {
-          task: "Pour myself a cup of ambition",
+          task: "Pour yourself a cup of ambition",
           id: 2,
           completed: false
         }
@@ -91,33 +91,33 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="text">
-          <div className="headline">
+         <div className="headline">
             <h1>What would Dolly do?</h1>
-            <h3>A to-do list for the dreamer in you!</h3>
+            <h3>If she's written 3,000 songs in her lifetime, you can get your work done.</h3>
           </div>
           
-          <div className="full-list">
+          <div className="listImgContainer">
             <div className="list">
+              <h2>To-do's:</h2>
               <TodoList 
               handleToggleStyle={this.toggleToDoStyle}
               toDos={this.state.toDos}/>
             </div>
+  
+            <div className="gif"><iframe  src="https://giphy.com/embed/9oIP0RAwxXRXMISHVh" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+          </div>
     
-            <div className="form">
-              <TodoForm 
+          <div className="form">
+            <TodoForm 
               value={this.state.toDo}
               handleChanges={this.handleChanges}
               handleAddToDo={this.addToDo}
               handleClearComplete={this.clearComplete}
               /> 
-            </div>
           </div>
-        </div>
-
-<div className="gif"><iframe  src="https://giphy.com/embed/MoxuIDaHkg9XQBnjhg" width="384" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-
+  
       </div>
+
     );
   }
 }

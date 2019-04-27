@@ -10,11 +10,13 @@ import Todo from "./Todo";
 
 const TodoList = props => {
     return (
-        <div>
+        <div className="toDoItem">
             {props.toDos.map((toDo) => (
-                <Todo 
-                handleToggleStyle={props.handleToggleStyle}
-                toDo={toDo}/> 
+                <p>
+                    <Todo 
+                    handleToggleStyle={props.handleToggleStyle}
+                    toDo={toDo}/>
+                </p> 
             ))}
         </div>
 

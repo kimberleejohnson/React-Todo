@@ -5,16 +5,20 @@ import React from 'react';
 const TodoForm = props => {
     return (
     <form>
-      <input 
-        onChange={props.handleChanges}
-        type="text"
-        name="toDo"
-        value={props.value}
-        placeholder="Add a new to-do" 
-      />
+      
+          <input className="inputButton"
+            onChange={props.handleChanges}
+            type="text"
+            name="toDo"
+            value={props.value}
+            placeholder="...What do you have to do today?" 
+          />
+    
+          <button className="add-btn" onClick={props.handleAddToDo}>+</button>
+      
+      
 
-      <button onClick={props.handleAddToDo}>Add somethin'</button>
-      <button onClick={props.handleClearComplete}>Did somethin'</button>
+      <button className="done-btn" onClick={props.handleClearComplete}>Clear 'em out!</button>
     </form>
     );
   };
