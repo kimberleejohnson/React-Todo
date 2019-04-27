@@ -75,6 +75,11 @@ form {
     margin: 0 auto;
 }
 
+input::placeholder {
+    color: #77bbdd; 
+    opacity: 1; 
+}
+
 .inputButton {
     font-family: 'Oswald', sans-serif;
     background-color: #ddddee;
