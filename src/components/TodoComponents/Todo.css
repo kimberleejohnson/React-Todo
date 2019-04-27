@@ -46,10 +46,12 @@ body {
 
 .list h2 {
     font-family: 'Pacifico', cursive;
+    font-size: 2rem; 
 }
 
 .toDoItem {
     color: #ddddee; 
+    font-size: 1.25rem; 
 }
 
 .listImgContainer {
@@ -69,9 +71,7 @@ form {
     display: flex;
     justify-content: space-evenly; 
     align-items: baseline; 
-    /* margin-bottom: 5%;  */
     padding-bottom: 5%; 
-    /* justify-content: center;  */
     margin: 0 auto;
 }
 
@@ -107,6 +107,5 @@ input::placeholder {
     font-size: 1.5rem; 
     background-color: #ddddee;
     color: #77bbdd;
-    margin-top: 30px;
     margin-right: 5%; 
 }
